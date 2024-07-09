@@ -1,5 +1,5 @@
 public class Solution {
-    public int RomanToInt(string s) {
+    public int RomanToInt(string romanString) {
 
         Dictionary<char, int> romanDictionary = new Dictionary<char, int>
         {
@@ -14,15 +14,15 @@ public class Solution {
 
         int totalValue = 0;
 
-        for(int i = 0; i < s.Length; i++)
+        for (int i = 0; i < romanString.Length; i++)
         {
-            int currentValue = romanDictionary[s[i]];
+            int currentValue = romanDictionary[romanString[i]];
 
-            if (i + 1 < s.Length && romanDictionary[s[i + 1]] > currentValue)
+            if (i + 1 < romanString.Length && romanDictionary[romanString[i + 1]] > currentValue)
             {
                 totalValue -= currentValue;
             }
-            else 
+            else
             {
                 totalValue += currentValue;
             }
